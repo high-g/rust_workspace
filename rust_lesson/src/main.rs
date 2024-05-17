@@ -1,3 +1,5 @@
+const A: i32 = 1;
+
 fn main() {
     // println!("Hello, world!");
     /*print!("Hello");
@@ -9,8 +11,13 @@ fn main() {
 
     // a = 2;
 
-    let mut b: i32 = 2;
-    b = 3;
+    let  b: i32 = 2;
 
     println!("{}", b);
+
+    println!("{}", A);
+
+
+    let a: i32 = 1;
+    let b: f64 = 2.0;
 }
