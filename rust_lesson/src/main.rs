@@ -1,25 +1,10 @@
-const A: i32 = 1;
-
 fn main() {
-    // println!("Hello, world!");
-    /*print!("Hello");
-    print!("Rust");*/
-    println!("Hello, {}", "student");
+    let t1: (i32, bool, f32) = (2, true, 3.0);
 
-    let a: i32 = 1;
-    println!("{}", a);
+    println!("{} {} {}", t1.0, t1.1, t1.2);
+    println!("{:?}", t1);
 
-    // a = 2;
+    let (x, y, z) = t1;
 
-    let  b: i32 = 2;
-
-    println!("{}", b);
-
-    println!("{}", A);
-
-
-    let a: i32 = 1;
-    let b: f64 = 2.0;
-
-    let t1: (i32, bool, f64) = (1, true, 2.0);
+    
 }
