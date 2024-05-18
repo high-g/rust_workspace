@@ -20,4 +20,6 @@ fn main() {
 
     let a: i32 = 1;
     let b: f64 = 2.0;
+
+    let t1: (i32, bool, f64) = (1, true, 2.0);
 }
