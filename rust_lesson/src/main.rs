@@ -1,32 +1,40 @@
-use std::ops::RangeInclusive;
+// use std::ops::RangeInclusive;
+
+mod fizzbuzz;
 
 fn main() {
-    // loop
     let mut cnt: i32 = 0;
-    loop {
-        println!("Hello Loop");
-        if cnt == 10 {
-            break;
-        }
+    while cnt <= 20 {
+        fizzbuzz::fizzbuzz(cnt);
         cnt += 1;
     }
 
-    // while
-    let mut cnt2: i32 = 0;
-    while cnt2 <= 10 {
-        println!("Hello While");
-        cnt2 += 1;
-    }
+    // // loop
+    // let mut cnt: i32 = 0;
+    // loop {
+    //     println!("Hello Loop");
+    //     if cnt == 10 {
+    //         break;
+    //     }
+    //     cnt += 1;
+    // }
 
-    // for
-    for i in [1, 2, 3] {
-        println!("Hello, {}", i);
-    }
+    // // while
+    // let mut cnt2: i32 = 0;
+    // while cnt2 <= 10 {
+    //     println!("Hello While");
+    //     cnt2 += 1;
+    // }
 
-    let r: RangeInclusive<i32> = 1..=10;
-    for j in r {
-        println!("Hello, {}", j);
-    }
+    // // for
+    // for i in [1, 2, 3] {
+    //     println!("Hello, {}", i);
+    // }
+
+    // let r: RangeInclusive<i32> = 1..=10;
+    // for j in r {
+    //     println!("Hello, {}", j);
+    // }
 
     // let x: i32 = 0;
     // match x {
