@@ -3,10 +3,14 @@
 mod fizzbuzz;
 
 fn main() {
-    let mut cnt: i32 = 0;
-    while cnt <= 20 {
-        fizzbuzz::fizzbuzz(cnt);
-        cnt += 1;
+    // let mut cnt: i32 = 0;
+    // while cnt <= 20 {
+    //     fizzbuzz::fizzbuzz(cnt);
+    //     cnt += 1;
+    // }
+
+    for i in 0..=20 {
+        fizzbuzz::fizzbuzz(i);
     }
 
     // // loop
