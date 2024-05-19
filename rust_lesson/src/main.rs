@@ -1,33 +1,50 @@
 fn main() {
-    let x: i32 = 5;
-
-    if x > 0 {
-        println!("OK!");
+    let x: i32 = 0;
+    match x {
+        0 => println!("x is zero"),
+        1 => {
+            println!("x is one");
+            println!("x is one");
+        }
+        _ => println!("x is something else"),
     }
 
-    if x > 0 && x < 10 {
-        println!("x > 0 && x < 10");
-    }
-    if x < 0 || x > 10 {
-        println!("x < 0 || x > 10");
-    }
-
-
-    let x: i32 = 10;
-    let y: i32 = if x > 30 {
-        x
-    } else {
-        x + 10
+    let y: i32 = match x {
+        0 => x + 10,
+        1 => x + 20,
+        _ => x + 100,
     };
 
     println!("{}", y);
+
+    // let x: i32 = 5;
+
+    // if x > 0 {
+    //     println!("OK!");
+    // }
+
+    // if x > 0 && x < 10 {
+    //     println!("x > 0 && x < 10");
+    // }
+    // if x < 0 || x > 10 {
+    //     println!("x < 0 || x > 10");
+    // }
+
+    // let x: i32 = 10;
+    // let y: i32 = if x > 30 {
+    //     x
+    // } else {
+    //     x + 10
+    // };
+
+    // println!("{}", y);
 
     // {}
     // {
     //     let x = 1;
     //     println!("{}", x);
     // }
-    
+
     // let y: i32 = 10;
     // println!("{}", y);
 
@@ -37,7 +54,6 @@ fn main() {
     // }
 
     // println!("{}", y);
-
 }
 
 // fn say_hello() {
@@ -54,7 +70,7 @@ fn main() {
 
 //     // let v1: Vec<i32> = vec![1, 2, 3];
 //     // let v2: Vec<i32> = vec![0; 1000];
-    
+
 //     // let mut v3: Vec<i32> = Vec::new();
 //     // v3.push(1);
 //     // v3.push(2);
@@ -64,7 +80,6 @@ fn main() {
 //     // let x: Option<i32> = v3.pop();
 //     // println!("{:?}", x);
 //     // println!("{:?}", v3[1]);
-
 
 //     // let z: Option<&i32> = v3.get(1);
 //     // println!("{:?}", z);
