@@ -1,21 +1,50 @@
+use std::ops::RangeInclusive;
+
 fn main() {
-    let x: i32 = 0;
-    match x {
-        0 => println!("x is zero"),
-        1 => {
-            println!("x is one");
-            println!("x is one");
+    // loop
+    let mut cnt: i32 = 0;
+    loop {
+        println!("Hello Loop");
+        if cnt == 10 {
+            break;
         }
-        _ => println!("x is something else"),
+        cnt += 1;
     }
 
-    let y: i32 = match x {
-        0 => x + 10,
-        1 => x + 20,
-        _ => x + 100,
-    };
+    // while
+    let mut cnt2: i32 = 0;
+    while cnt2 <= 10 {
+        println!("Hello While");
+        cnt2 += 1;
+    }
 
-    println!("{}", y);
+    // for
+    for i in [1, 2, 3] {
+        println!("Hello, {}", i);
+    }
+
+    let r: RangeInclusive<i32> = 1..=10;
+    for j in r {
+        println!("Hello, {}", j);
+    }
+
+    // let x: i32 = 0;
+    // match x {
+    //     0 => println!("x is zero"),
+    //     1 => {
+    //         println!("x is one");
+    //         println!("x is one");
+    //     }
+    //     _ => println!("x is something else"),
+    // }
+
+    // let y: i32 = match x {
+    //     0 => x + 10,
+    //     1 => x + 20,
+    //     _ => x + 100,
+    // };
+
+    // println!("{}", y);
 
     // let x: i32 = 5;
 
