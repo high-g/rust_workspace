@@ -1,30 +1,33 @@
 // use std::ops::RangeInclusive;
 // mod fizzbuzz;
 
-fn concat(s1: String, s2: String) -> String {
-    let c: String = format!("{}, {}", s1, s2);
-    c
+fn concat(a: String, b: String) -> (String, String, String) {
+    let c: String = format!("{}, {}", a, b);
+    (c, a, b)
 }
 
 fn main() {
-    // let s1: String = String::from("hello");
-    // let s2: String = String::from("hello");
-    // let s: String = concat(s1, s2);
-    // println!("{}", s);
-
     let mut v1: Vec<i32> = vec![1, 2, 3];
-    println!("v1 ptr: {:?}", v1.as_ptr());
-    println!("v1[0]: {:p}", &v1[0]);
-    println!("v1 len: {:?}", v1.len());
-    println!("v1 capacity: {:?}", v1.capacity());
+    // println!("v1 ptr: {:?}", v1.as_ptr());
+    // println!("v1[0]: {:p}", &v1[0]);
+    // println!("v1 len: {:?}", v1.len());
+    // println!("v1 capacity: {:?}", v1.capacity());
 
-    v1.push(4);
-    println!("v1 ptr: {:?}", v1.as_ptr());
-    println!("v1 len: {:?}", v1.len());
-    println!("v1 capacity: {:?}", v1.capacity());
+    // v1.push(4);
+    // println!("v1 ptr: {:?}", v1.as_ptr());
+    // println!("v1 len: {:?}", v1.len());
+    // println!("v1 capacity: {:?}", v1.capacity());
 
-    // println!("{}", s1);
-    // println!("{}", s2);
+    let v2: Vec<i32> = v1.clone();
+    println!("v1 ptr: {:?}", v1.as_ptr());
+    println!("v2 ptr: {:?}", v2.as_ptr());
+
+    let s1: String = String::from("hello");
+    let s2: String = String::from("hello");
+    let (s, s1, s2) = concat(s1, s2);
+    println!("{}", s);
+    println!("{}", s1);
+    println!("{}", s2);
 
     // let mut cnt: i32 = 0;
     // while cnt <= 20 {
