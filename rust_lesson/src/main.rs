@@ -1,13 +1,19 @@
 // use std::ops::RangeInclusive;
 // mod fizzbuzz;
 
-fn concat(a: String, b: String) -> (String, String, String) {
+fn concat(a: &String, b: &String) -> String {
     let c: String = format!("{}, {}", a, b);
-    (c, a, b)
+    c
 }
 
 fn main() {
-    let mut v1: Vec<i32> = vec![1, 2, 3];
+    let x1: Vec<i32> = vec![1, 2, 3];
+    let x2: &Vec<i32> = &x1;
+
+    println!("{:?}", x1);
+    println!("{:?}", x2);
+
+    let v1: Vec<i32> = vec![1, 2, 3];
     // println!("v1 ptr: {:?}", v1.as_ptr());
     // println!("v1[0]: {:p}", &v1[0]);
     // println!("v1 len: {:?}", v1.len());
@@ -24,7 +30,7 @@ fn main() {
 
     let s1: String = String::from("hello");
     let s2: String = String::from("hello");
-    let (s, s1, s2) = concat(s1, s2);
+    let s = concat(&s1, &s2);
     println!("{}", s);
     println!("{}", s1);
     println!("{}", s2);
