@@ -1,17 +1,55 @@
-use std::rc::Rc;
+struct Rectangle {
+    width: u32,
+    height: u32,
+}
+
+impl Rectangle {
+    fn area(&self) -> u32 {
+        self.width * self.height
+    }
+
+    // コンストラクタ
+    fn new(width: u32, height: u32) -> Self {
+        Rectangle { width, height }
+    }
+}
+
+enum Shape {
+    Circle,
+    Square(u32, u32),
+    Triangle { base: u32, height: u32 },
+}
+
+impl Shape {
+    fn sample_method(&self) {
+        println!("sample_method");
+    }
+}
 
 fn main() {
-    let x: Box<i32> = Box::new(1);
-    println!("x: {:p}", x);
-    println!("*x +2 = {}", *x + 2);
+    // enum Option<T> {
+    //     None,
+    //     Some(T),
+    // }
 
-    let a: Rc<String> = Rc::new("hello".to_string());
-    println!("count1: {}", Rc::strong_count(&a));
-    {
-        let b: Rc<String> = Rc::clone(&a);
-        println!("a: {:p}", a);
-        println!("b: {:p}", b);
-        println!("count2: {}", Rc::strong_count(&a));
-    }
-    println!("count3: {}", Rc::strong_count(&a));
+    let c: Shape = Shape::Circle;
+    let s: Shape = Shape::Square(10, 20);
+    let t: Shape = Shape::Triangle {
+        base: 10,
+        height: 20,
+    };
+
+    c.sample_method();
+    s.sample_method();
+    t.sample_method();
+
+    let mut rectangle: Rectangle = Rectangle::new(30, 50);
+
+    println!("width: {}", rectangle.width);
+    println!("height: {}", rectangle.height);
+
+    rectangle.height = 20;
+    println!("height: {}", rectangle.height);
+
+    println!("area: {}", rectangle.area());
 }
