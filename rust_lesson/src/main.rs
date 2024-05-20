@@ -7,10 +7,22 @@ fn concat(s1: String, s2: String) -> String {
 }
 
 fn main() {
-    let s1: String = String::from("hello");
-    let s2: String = String::from("hello");
-    let s: String = concat(s1, s2);
-    println!("{}", s);
+    // let s1: String = String::from("hello");
+    // let s2: String = String::from("hello");
+    // let s: String = concat(s1, s2);
+    // println!("{}", s);
+
+    let mut v1: Vec<i32> = vec![1, 2, 3];
+    println!("v1 ptr: {:?}", v1.as_ptr());
+    println!("v1[0]: {:p}", &v1[0]);
+    println!("v1 len: {:?}", v1.len());
+    println!("v1 capacity: {:?}", v1.capacity());
+
+    v1.push(4);
+    println!("v1 ptr: {:?}", v1.as_ptr());
+    println!("v1 len: {:?}", v1.len());
+    println!("v1 capacity: {:?}", v1.capacity());
+
     // println!("{}", s1);
     // println!("{}", s2);
 
