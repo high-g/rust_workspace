@@ -1,17 +1,28 @@
 // use std::ops::RangeInclusive;
+// mod fizzbuzz;
 
-mod fizzbuzz;
+fn concat(s1: String, s2: String) -> String {
+    let c: String = format!("{}, {}", s1, s2);
+    c
+}
 
 fn main() {
+    let s1: String = String::from("hello");
+    let s2: String = String::from("hello");
+    let s: String = concat(s1, s2);
+    println!("{}", s);
+    // println!("{}", s1);
+    // println!("{}", s2);
+
     // let mut cnt: i32 = 0;
     // while cnt <= 20 {
     //     fizzbuzz::fizzbuzz(cnt);
     //     cnt += 1;
     // }
 
-    for i in 0..=20 {
-        fizzbuzz::fizzbuzz(i);
-    }
+    // for i in 0..=20 {
+    //     fizzbuzz::fizzbuzz(i);
+    // }
 
     // // loop
     // let mut cnt: i32 = 0;
