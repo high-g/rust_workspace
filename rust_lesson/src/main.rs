@@ -1,30 +1,4 @@
-struct Rectangle {
-    width: u32,
-    height: u32,
-}
-
-impl Rectangle {
-    fn area(&self) -> u32 {
-        self.width * self.height
-    }
-
-    // コンストラクタ
-    fn new(width: u32, height: u32) -> Self {
-        Rectangle { width, height }
-    }
-}
-
-enum Shape {
-    Circle,
-    Square(u32, u32),
-    Triangle { base: u32, height: u32 },
-}
-
-impl Shape {
-    fn sample_method(&self) {
-        println!("sample_method");
-    }
-}
+use std::vec;
 
 fn main() {
     // enum Option<T> {
@@ -32,24 +6,18 @@ fn main() {
     //     Some(T),
     // }
 
-    let c: Shape = Shape::Circle;
-    let s: Shape = Shape::Square(10, 20);
-    let t: Shape = Shape::Triangle {
-        base: 10,
-        height: 20,
-    };
+    let a: Option<i32> = Some(5);
+    let b: Option<&str> = Some("Hello");
+    let c: Option<i32> = None;
 
-    c.sample_method();
-    s.sample_method();
-    t.sample_method();
+    let v: Vec<i32> = vec![1, 2, 3, 4, 5];
+    let val: Option<&i32> = v.get(0);
 
-    let mut rectangle: Rectangle = Rectangle::new(30, 50);
-
-    println!("width: {}", rectangle.width);
-    println!("height: {}", rectangle.height);
-
-    rectangle.height = 20;
-    println!("height: {}", rectangle.height);
-
-    println!("area: {}", rectangle.area());
+    match val {
+        // Some(1) => println!("Value is: 1"),
+        // Some(2 | 3) => println!("Value is: 2 or 3"),
+        Some(x) if *x == 1 => println!("Value is: 1"),
+        Some(x) => println!("Value is: {}", x),
+        None => println!("Value not found"),
+    }
 }
